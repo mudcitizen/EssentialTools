@@ -3,6 +3,7 @@
 
     public interface IDiscountHelper
     {
+
         decimal ApplyDiscount(decimal totalParam);
     }
 
