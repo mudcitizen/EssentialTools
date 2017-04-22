@@ -19,7 +19,7 @@ namespace EssentialTools.Infrastructure
         }
 
         private void AddBindings() {
-            kernel.Bind<IDiscountHelper>().To<DefaultDiscountHelper>();
+            kernel.Bind<IDiscountHelper>().To<DefaultDiscountHelper>().WithConstructorArgument("discountSize", 50M);
             kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
         }
 

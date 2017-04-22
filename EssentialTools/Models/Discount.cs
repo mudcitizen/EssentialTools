@@ -7,10 +7,15 @@
     }
 
     public class DefaultDiscountHelper : IDiscountHelper
-    {     
+    {
+        protected decimal DiscountSize = 10;
+
+        public DefaultDiscountHelper(decimal discountSize) {
+            DiscountSize = discountSize;
+        }
         public decimal ApplyDiscount(decimal totalParam)
         {
-            return (totalParam - (10m / 100m * totalParam));
+            return (totalParam - (DiscountSize / 100m * totalParam));
         }
     }
 }
