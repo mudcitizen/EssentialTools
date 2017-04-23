@@ -9,9 +9,12 @@ namespace EssentialTools.Models
     {
 
         IDiscountHelper discounter;
+        private static int counter = 0;
 
         public LinqValueCalculator(IDiscountHelper discountHelper) {
             discounter = discountHelper;
+            counter++;
+            System.Diagnostics.Debug.WriteLine(string.Format("Instance {0} created", counter));
         }
    
         public decimal ValueProducts(IEnumerable<Product> products)
